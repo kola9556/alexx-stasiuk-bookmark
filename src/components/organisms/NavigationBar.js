@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const NavWrapper = styled.div`
   width: 100%;
   height: 10rem;
-  background-color: transparent;
+  background-color: white;
   position: fixed;
   top: 0;
   display: flex;

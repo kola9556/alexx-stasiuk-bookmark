@@ -1,5 +1,5 @@
 import React from 'react';
-import mockup from 'assets/images/illustration-hero.svg';
+import hero from 'assets/images/illustration-hero.svg';
 import BlueShape from 'components/atoms/BlueShape';
 import styled from 'styled-components';
 
@@ -19,7 +19,7 @@ const HeroImg = styled.img`
 const HeroSection = () => (
   <>
     <TopWrapper>
-      <HeroImg src={mockup} />
+      <HeroImg src={hero} />
       <BlueShape />
     </TopWrapper>
   </>

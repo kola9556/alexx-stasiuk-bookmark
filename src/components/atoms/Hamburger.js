@@ -19,7 +19,7 @@ const HamburgerBar = styled.div`
   width: 3rem;
   height: 0.4rem;
   border-radius: 2rem;
-  background-color: black;
+  background-color: ${({ theme }) => theme.darkBlue};
   margin: 0.4rem 0;
   transition: 0.4s;
 
@@ -45,7 +45,7 @@ const Hamburger = () => {
   const [click, setClick] = useState({ clicked: false });
 
   const handleHamClick = () =>
-    click.clicked === false ? setClick({ clicked: true }) : setClick({ clicked: false });
+    !click.clicked ? setClick({ clicked: true }) : setClick({ clicked: false });
 
   return (
     <>

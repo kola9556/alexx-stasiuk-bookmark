@@ -1,16 +1,15 @@
 import React from 'react';
+import Button from 'components/atoms/Button';
+import StyledPara from 'components/atoms/StyledPara';
+import StyledSecondHeader from 'components/atoms/StyledSecondHeader';
+import StyledTitle from 'components/atoms/StyledTitle';
 import HeroSection from 'components/molecules/HeroSection';
+import AnimCardChanger from 'components/organisms/AnimCardChanger';
 import NavigationBar from 'components/organisms/NavigationBar';
 import styled from 'styled-components';
 
 import MainTemplate from './templates/MainTemplate';
 
-const Title = styled.h1`
-  text-align: center;
-  font-weight: 500;
-  font-size: 3rem;
-  color: black;
-`;
 const ContenWrapper = styled.div`
   margin: 0 2rem;
   padding: 0;
@@ -20,6 +19,18 @@ const ContenWrapper = styled.div`
   align-items: center;
   align-content: center;
 `;
+
+const ButtonsWrapper = styled.div`
+  margin: 3rem 0 10rem;
+`;
+
+const Line = styled.div`
+  width: 30rem;
+  height: 2rem;
+  margin-top: 3rem;
+  border-bottom: 2px solid #d1cfcf;
+`;
+
 function App() {
   return (
     <>
@@ -28,7 +39,22 @@ function App() {
           <NavigationBar />
           <HeroSection />
           <ContenWrapper>
-            <Title>A Simple Bookmark Manager</Title>
+            <StyledTitle>A Simple Bookmark Manager</StyledTitle>
+            <StyledPara>
+              A clean and simple interface to organize your favourite websites. Open a new browser
+              tab and see your site load instantly. Try it for free.
+            </StyledPara>
+            <ButtonsWrapper>
+              <Button buttonColor="blue">Get it on Chrome</Button>
+              <Button buttonColor="white">Get it on Firefox</Button>
+            </ButtonsWrapper>
+            <StyledSecondHeader>Features</StyledSecondHeader>
+            <StyledPara>
+              Our aim is to make it quick and easy for you to access your favourite website. Your
+              bookmark sync between your devices so you can access them on the go.
+            </StyledPara>
+            <Line />
+            <AnimCardChanger />
           </ContenWrapper>
         </>
       </MainTemplate>
