@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const CardWrapper = styled.div`
-  margin: 6rem 0;
+  margin: 6rem 0 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;

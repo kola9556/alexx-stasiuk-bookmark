@@ -3,8 +3,10 @@ import Button from 'components/atoms/Button';
 import StyledPara from 'components/atoms/StyledPara';
 import StyledSecondHeader from 'components/atoms/StyledSecondHeader';
 import StyledTitle from 'components/atoms/StyledTitle';
+import ExtensionCard from 'components/molecules/ExtensionCard';
 import HeroSection from 'components/molecules/HeroSection';
 import AnimCardChanger from 'components/organisms/AnimCardChanger';
+import Collapse from 'components/organisms/Collapse';
 import NavigationBar from 'components/organisms/NavigationBar';
 import styled from 'styled-components';
 
@@ -31,6 +33,10 @@ const Line = styled.div`
   border-bottom: 2px solid #d1cfcf;
 `;
 
+const MarginStyledSecondHeader = styled(StyledSecondHeader)`
+  margin-top: 12rem;
+`;
+
 function App() {
   return (
     <>
@@ -55,6 +61,21 @@ function App() {
             </StyledPara>
             <Line />
             <AnimCardChanger />
+            <StyledSecondHeader>Download the extension</StyledSecondHeader>
+            <StyledPara>
+              We‘ve got more browsers in the pipeline. Please do let us know if you‘ve got a
+              favourite you‘d like us to prioritize.
+            </StyledPara>
+            <ExtensionCard type="chrome" />
+            <ExtensionCard type="firefox" />
+            <ExtensionCard type="opera" />
+            <MarginStyledSecondHeader>Frequently Asked Questions</MarginStyledSecondHeader>
+            <StyledPara>
+              Here are some of our FAQs. If you have any other questions you‘d like answered pease
+              feel free to email us.
+            </StyledPara>
+            <Collapse />
+            <Button buttonColor="blue">More Info</Button>
           </ContenWrapper>
         </>
       </MainTemplate>

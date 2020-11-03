@@ -5,5 +5,6 @@ const StyledPara = styled.p`
   text-align: center;
   font-size: 1.7rem;
   font-weight: 400;
+  line-height: 2.8rem;
 `;
 export default StyledPara;
