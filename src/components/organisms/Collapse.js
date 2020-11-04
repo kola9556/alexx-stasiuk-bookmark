@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const CollapseWrapper = styled.div`
   margin: 5rem 0 3rem;
   width: 85vw;
+
+  @media (min-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const Collapse = () => {

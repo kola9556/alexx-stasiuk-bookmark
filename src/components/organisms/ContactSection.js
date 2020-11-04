@@ -6,25 +6,49 @@ import styled from 'styled-components';
 
 const ContactWrapper = styled.div`
   margin-top: 6rem;
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.lightBlue};
+
+  @media (min-width: 1200px) {
+    height: 43vh;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1200px) {
+    width: 50vw;
+  }
 `;
 
 const CounterStyledSecHeader = styled(StyledSecondHeader)`
   color: white;
   font-size: 2.5rem;
   margin-top: 0.5rem;
+
+  @media (min-width: 1200px) {
+    width: 50%;
+    margin-top: 1.8rem;
+  }
 `;
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 `;
 
 const StyledSubmit = styled.input`
@@ -37,6 +61,16 @@ const StyledSubmit = styled.input`
   color: white;
   font-size: 1.6rem;
   font-weight: 600;
+
+  @media (min-width: 1200px) {
+    width: 10vw;
+  }
+
+  :hover {
+    background-color: white;
+    border: 2px solid ${({ theme }) => theme.lightRed};
+    color: ${({ theme }) => theme.lightRed};
+  }
 `;
 
 const Input = styled.input`
@@ -47,6 +81,10 @@ const Input = styled.input`
   border-radius: 0.7rem;
   outline: none;
   z-index: 10;
+
+  @media (min-width: 1200px) {
+    width: 30vw;
+  }
 `;
 
 const InputWrapper = styled.div`
@@ -69,6 +107,10 @@ const InvalidLabel = styled.div`
   position: relative;
   bottom: 1rem;
   z-index: 5;
+
+  @media (min-width: 1200px) {
+    width: calc(30vw + 0.8rem);
+  }
 `;
 const StyledMessage = styled.p`
   color: white;
@@ -85,6 +127,10 @@ const AlertIcon = styled.img`
   left: 13rem;
   z-index: 20;
   display: none;
+
+  @media (min-width: 1200px) {
+    left: 20rem;
+  }
 `;
 
 const ContactSection = () => {
@@ -108,28 +154,28 @@ const ContactSection = () => {
 
   return (
     <ContactWrapper>
-      <Counter />
-      <CounterStyledSecHeader>Stay up-to-date with what we‘re doing</CounterStyledSecHeader>
-
-      <StyledForm ref={myForm}>
-        <InputWrapper>
-          <Input
-            onChange={handleInvalid}
-            ref={myInput}
-            type="email"
-            name="mail"
-            id="mailLabel"
-            placeholder="email"
-            required
-          />
-          <InvalidLabel ref={myInvalid}>
-            <StyledMessage>Whoops, make sure it‘s an email</StyledMessage>
-          </InvalidLabel>
-          <AlertIcon ref={myIcon} src={alert} />
-        </InputWrapper>
-
-        <StyledSubmit type="submit" value="Contact Us" />
-      </StyledForm>
+      <ContentWrapper>
+        <Counter />
+        <CounterStyledSecHeader>Stay up-to-date with what we‘re doing</CounterStyledSecHeader>
+        <StyledForm ref={myForm}>
+          <InputWrapper>
+            <Input
+              onChange={handleInvalid}
+              ref={myInput}
+              type="email"
+              name="mail"
+              id="mailLabel"
+              placeholder="email"
+              required
+            />
+            <InvalidLabel ref={myInvalid}>
+              <StyledMessage>Whoops, make sure it‘s an email</StyledMessage>
+            </InvalidLabel>
+            <AlertIcon ref={myIcon} src={alert} />
+          </InputWrapper>
+          <StyledSubmit type="submit" value="Contact Us" />
+        </StyledForm>
+      </ContentWrapper>
     </ContactWrapper>
   );
 };

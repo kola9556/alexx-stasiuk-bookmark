@@ -11,7 +11,8 @@ const HamburgerWrapper = styled.button`
   outline: none;
   cursor: pointer;
   z-index: 200;
-  @media (minwidth: '1000px') {
+
+  @media (min-width: 1200px) {
     display: none;
   }
 `;

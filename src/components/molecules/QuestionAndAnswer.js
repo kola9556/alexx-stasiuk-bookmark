@@ -19,6 +19,10 @@ const QuestionButton = styled.button`
   border: none;
   border-bottom: 2px solid #d1cfcf;
   margin-bottom: 3rem;
+
+  :hover {
+    color: ${({ theme }) => theme.lightRed};
+  }
 `;
 
 const AnswerCard = styled(StyledPara)`

@@ -9,7 +9,7 @@ import styled from 'styled-components';
 const CardWrapper = styled.div`
   width: 85vw;
   position: fixed;
-  right: 0;
+  right: 2rem;
   margin: 6rem 0 10rem;
   display: none;
   flex-direction: column;
@@ -17,23 +17,24 @@ const CardWrapper = styled.div`
   justify-content: center;
   z-index: 1000;
   background-color: white;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 1200px) {
+    width: 65vw;
+    flex-direction: row;
+    height: 40vh;
+    bottom: 0rem;
+  }
 `;
 
 const StyledImage = styled.img`
   margin-top: 1rem;
   width: 50vw;
   margin-bottom: 2rem;
-`;
 
-const StyledBlueShape = styled.div`
-  height: 33vh;
-  width: 77vw;
-  position: absolute;
-  top: 137rem;
-  left: 0;
-  border-radius: 0 0 8rem 0;
-  background-color: ${({ theme }) => theme.lightBlue};
-  z-index: -100;
+  @media (min-width: 1200px) {
+    width: 30%;
+  }
 `;
 
 const StyledButton = styled(Button)`
@@ -51,6 +52,33 @@ const CloseButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+
+  @media (min-width: 1200px) {
+    top: -12rem;
+    right: 6rem;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1200px) {
+    align-items: flex-start;
+    justify-content: center;
+    width: 40%;
+    margin-left: 8rem;
+  }
+`;
+
+const PopStyledPara = styled(StyledPara)`
+  text-align: center;
+  margin: 0 1rem;
+
+  @media (min-width: 1200px) {
+    text-align: left;
+  }
 `;
 
 const Popup = () => {
@@ -69,13 +97,14 @@ const Popup = () => {
     <CardWrapper ref={myPop}>
       <CloseButton onClick={handleClose}>&times;</CloseButton>
       <StyledImage src={speedy} />
-      <StyledBlueShape />
-      <StyledSecondHeader>Inteligent search</StyledSecondHeader>
-      <StyledPara>
-        Our powerful search feature will help you find saved sites in no time at all. No need to
-        trawl through all of your bookmarks.
-      </StyledPara>
-      <StyledButton buttonColor="blue">More Info</StyledButton>
+      <ContentWrapper>
+        <StyledSecondHeader>Inteligent search</StyledSecondHeader>
+        <PopStyledPara>
+          Our powerful search feature will help you find saved sites in no time at all. No need to
+          trawl through all of your bookmarks.
+        </PopStyledPara>
+        <StyledButton buttonColor="blue">More Info</StyledButton>
+      </ContentWrapper>
     </CardWrapper>
   );
 };

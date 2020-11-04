@@ -10,10 +10,14 @@ const TopWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 1200px) {
+    width: 60%;
+  }
 `;
 
 const HeroImg = styled.img`
-  width: 90vw;
+  width: 100%;
 `;
 
 const HeroSection = () => (

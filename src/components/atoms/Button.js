@@ -11,12 +11,19 @@ const Button = styled.button`
   border: none;
   border-radius: 0.7rem;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 
   ${({ buttonColor }) =>
     buttonColor === 'blue' &&
     css`
       background: ${({ theme }) => theme.lightBlue};
       color: white;
+
+      :hover {
+        border: 2px solid ${({ theme }) => theme.lightBlue};
+        background: white;
+        color: ${({ theme }) => theme.lightBlue};
+      }
     `}
 
   ${({ buttonColor }) =>
@@ -24,6 +31,12 @@ const Button = styled.button`
     css`
       background: ${({ theme }) => theme.almostWhite};
       color: grey;
+
+      :hover {
+        border: 2px solid ${({ theme }) => theme.darkBlue};
+        background: ${({ theme }) => theme.almostWhite};
+        color: ${({ theme }) => theme.darkBlue};
+      }
     `}
 
     ${({ buttonColor }) =>

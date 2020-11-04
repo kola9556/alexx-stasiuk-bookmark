@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Card from 'components/molecules/Card';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ButtonWrapper = styled.div`
   width: 30rem;
@@ -11,6 +11,17 @@ const ButtonWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      color: ${({ theme }) => theme.darkBlue};
+    `}
+
+  :hover {
+    color: ${({ theme }) => theme.lightRed};
+  }
 `;
 
 const RedLine = styled.div`
@@ -24,6 +35,22 @@ const RedLine = styled.div`
 
   &.red {
     width: 15rem;
+  }
+
+  @media (min-width: 1200px) {
+    &.red {
+      width: 100%;
+    }
+  }
+`;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
   }
 `;
 
@@ -78,18 +105,21 @@ const AnimCardChanger = () => {
 
   return (
     <>
-      <ButtonWrapper onClick={handleClickFirst}>
-        Simple Bookmarking
-        <RedLine className={click.clickedFirst ? 'red' : 'RedLine'} />
-      </ButtonWrapper>
-      <ButtonWrapper onClick={handleClickSecond}>
-        Speedy Searching
-        <RedLine className={click.clickedSecond ? 'red' : 'RedLine'} />
-      </ButtonWrapper>
-      <ButtonWrapper onClick={handleClickThird}>
-        Easy Sharing
-        <RedLine className={click.clickedThird ? 'red' : 'RedLine'} />
-      </ButtonWrapper>
+      <ButtonsWrapper>
+        <ButtonWrapper isActive={click.clickedFirst} onClick={handleClickFirst}>
+          Simple Bookmarking
+          <RedLine className={click.clickedFirst ? 'red' : 'RedLine'} />
+        </ButtonWrapper>
+        <ButtonWrapper isActive={click.clickedSecond} onClick={handleClickSecond}>
+          Speedy Searching
+          <RedLine className={click.clickedSecond ? 'red' : 'RedLine'} />
+        </ButtonWrapper>
+        <ButtonWrapper isActive={click.clickedThird} onClick={handleClickThird}>
+          Easy Sharing
+          <RedLine className={click.clickedThird ? 'red' : 'RedLine'} />
+        </ButtonWrapper>
+      </ButtonsWrapper>
+
       <Card displayed={click.clickedFirst} whichCard={Object.keys(click)[0]} />
       <Card displayed={click.clickedSecond} whichCard={Object.keys(click)[1]} />
       <Card displayed={click.clickedThird} whichCard={Object.keys(click)[2]} />

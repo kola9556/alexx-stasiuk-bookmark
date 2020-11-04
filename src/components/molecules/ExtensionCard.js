@@ -7,7 +7,7 @@ import Button from 'components/atoms/Button';
 import StyledPara from 'components/atoms/StyledPara';
 import StyledSecondHeader from 'components/atoms/StyledSecondHeader';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ExtCardWrapper = styled.div`
   width: 28rem;
@@ -19,6 +19,30 @@ const ExtCardWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 1200px) {
+    position: relative;
+
+    ${({ type }) =>
+      type === 'chrome' &&
+      css`
+        right: 2rem;
+      `}
+
+    ${({ type }) =>
+      type === 'firefox' &&
+      css`
+        top: 3rem;
+      `}
+
+      
+    ${({ type }) =>
+      type === 'opera' &&
+      css`
+        top: 6rem;
+        left: 2rem;
+      `}
+  }
 `;
 
 const Icon = styled.img``;
@@ -73,7 +97,7 @@ const ExtensionCard = ({ type }) => {
         return <></>;
     }
   };
-  return <ExtCardWrapper>{handleWhichCard()}</ExtCardWrapper>;
+  return <ExtCardWrapper type={type}>{handleWhichCard()}</ExtCardWrapper>;
 };
 
 ExtensionCard.propTypes = {
