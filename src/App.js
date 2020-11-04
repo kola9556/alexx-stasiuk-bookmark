@@ -195,9 +195,8 @@ function App() {
               <Collapse />
               <Button buttonColor="blue">More Info</Button>
             </FaqSection>
-
-            <ContactSection />
           </ContenWrapper>
+          <ContactSection />
           <Footer />
         </>
       </MainTemplate>

@@ -87,7 +87,7 @@ const Popup = () => {
   useEffect(() => {
     setTimeout(() => {
       myPop.current.style.display = 'flex';
-    }, 5000);
+    }, 30000);
   });
 
   const handleClose = () => {
