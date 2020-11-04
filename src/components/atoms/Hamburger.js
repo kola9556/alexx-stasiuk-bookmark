@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DropDown from 'components/molecules/DropDown';
 import styled from 'styled-components';
 
 const HamburgerWrapper = styled.button`
@@ -9,7 +10,7 @@ const HamburgerWrapper = styled.button`
   display: inline-block;
   outline: none;
   cursor: pointer;
-
+  z-index: 200;
   @media (minwidth: '1000px') {
     display: none;
   }
@@ -54,6 +55,7 @@ const Hamburger = () => {
         <HamburgerBar className={click.clicked ? 'change' : 'HamburgerBar'} />
         <HamburgerBar className={click.clicked ? 'change' : 'HamburgerBar'} />
       </HamburgerWrapper>
+      <DropDown isVisible={click.clicked} />
     </>
   );
 };

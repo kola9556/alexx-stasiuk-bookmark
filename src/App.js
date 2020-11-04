@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'components/atoms/Button';
 import StyledPara from 'components/atoms/StyledPara';
 import StyledSecondHeader from 'components/atoms/StyledSecondHeader';
@@ -6,6 +6,7 @@ import StyledTitle from 'components/atoms/StyledTitle';
 import ExtensionCard from 'components/molecules/ExtensionCard';
 import Footer from 'components/molecules/Footer';
 import HeroSection from 'components/molecules/HeroSection';
+import Popup from 'components/molecules/Popup';
 import AnimCardChanger from 'components/organisms/AnimCardChanger';
 import Collapse from 'components/organisms/Collapse';
 import ContactSection from 'components/organisms/ContactSection';
@@ -44,6 +45,7 @@ function App() {
     <>
       <MainTemplate>
         <>
+          <Popup />
           <NavigationBar />
           <HeroSection />
           <ContenWrapper>
