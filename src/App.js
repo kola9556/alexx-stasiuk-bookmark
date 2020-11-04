@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Button from 'components/atoms/Button';
 import StyledPara from 'components/atoms/StyledPara';
 import StyledSecondHeader from 'components/atoms/StyledSecondHeader';
