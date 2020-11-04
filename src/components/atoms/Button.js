@@ -25,6 +25,13 @@ const Button = styled.button`
       background: ${({ theme }) => theme.almostWhite};
       color: grey;
     `}
+
+    ${({ buttonColor }) =>
+    buttonColor === 'red' &&
+    css`
+      background: ${({ theme }) => theme.lightRed};
+      color: white;
+    `}
 `;
 
 export default Button;

@@ -1,6 +1,4 @@
-import React, { useRef } from 'react';
-import arrow from 'assets/images/icon-arrow.svg';
-import StyledPara from 'components/atoms/StyledPara';
+import React from 'react';
 import QuestionAndAnswer from 'components/molecules/QuestionAndAnswer';
 import styled from 'styled-components';
 
@@ -37,11 +35,11 @@ const Collapse = () => {
       pretium ut vel ipsum."
       />
       <QuestionAndAnswer
-        question="What about other Chromium browsers?"
-        text=" Quisque at turpis in ligula consectetur
-    pretium ut vel ipsum. Aenean suscipit, erat ac luctus commodo, nibh erat viverra ipsum,
-    vehicula ornare lorem ex vitae libero. Cras mollis lectus sed nunc iaculis ultricies. Sed
-    orci ligula, semper ut maximus a, tincidunt nec ante. "
+        question="What about other browsers ?"
+        text="Quisque at turpis in ligula consectetur
+        pretium ut vel ipsum. Aenean suscipit, erat ac luctus commodo, nibh erat viverra ipsum,
+        vehicula ornare lorem ex vitae libero. Cras mollis lectus sed nunc iaculis ultricies. Sed
+        orci ligula, semper ut maximus a, tincidunt nec ante."
       />
     </CollapseWrapper>
   );

@@ -4,9 +4,11 @@ import StyledPara from 'components/atoms/StyledPara';
 import StyledSecondHeader from 'components/atoms/StyledSecondHeader';
 import StyledTitle from 'components/atoms/StyledTitle';
 import ExtensionCard from 'components/molecules/ExtensionCard';
+import Footer from 'components/molecules/Footer';
 import HeroSection from 'components/molecules/HeroSection';
 import AnimCardChanger from 'components/organisms/AnimCardChanger';
 import Collapse from 'components/organisms/Collapse';
+import ContactSection from 'components/organisms/ContactSection';
 import NavigationBar from 'components/organisms/NavigationBar';
 import styled from 'styled-components';
 
@@ -76,7 +78,9 @@ function App() {
             </StyledPara>
             <Collapse />
             <Button buttonColor="blue">More Info</Button>
+            <ContactSection />
           </ContenWrapper>
+          <Footer />
         </>
       </MainTemplate>
     </>
